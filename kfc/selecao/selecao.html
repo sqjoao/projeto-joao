@@ -1,73 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedido - KFC</title>
-    <link rel="stylesheet" href="selecao.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pedido - KFC</title>
+  <link rel="stylesheet" href="selecao.css">
 </head>
 <body>
 
-    <!-- Barra Lateral -->
-    <div class="sidebar">
-        <h2>KFC</h2>
-        <div class="nav-links">
-          <a href="#baldes">
-            <button>Baldes</button>
-          </a>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <img src="/kfc/assets/pngimg.com - kfc_PNG13.png" alt="logo kfc">
+    <button onclick="document.getElementById('baldes').scrollIntoView({behavior: 'smooth'})">Baldes</button>
+    <button onclick="document.getElementById('combos').scrollIntoView({behavior: 'smooth'})">Combos</button>
+    <button onclick="document.getElementById('bebidas').scrollIntoView({behavior: 'smooth'})">Bebidas</button>
+    <button onclick="document.getElementById('molhos').scrollIntoView({behavior: 'smooth'})">Molhos</button>
+    <button class="finalizar">Finalizar Pedido</button>
+  </div>
 
-          <a href="#combos">
-            <button>Combos</button>
-          </a>
+  <!-- Área principal -->
+  <div class="main">
 
-          <a href="#bebidas">
-            <button>Bebidas</button>
-          </a>
+    <!-- Section Baldes -->
+    <section id="baldes">
+      <h2>Baldes</h2>
+      <div class="linha-produtos">
+        <div class="card">Balde 1</div>
+        <div class="card">Balde 2</div>
+        <div class="card">Balde 3</div>
+        <div class="card">Balde 4</div>
+        <div class="card">Balde 5</div>
+      </div>
+    </section>
 
-          <a href="#molhos">
-            <button>Molhos</button>
-          </a>
-        </div>
+    <!-- Section Combos -->
+    <section id="combos">
+      <h2>Combos</h2>
+      <div class="linha-produtos">
+        <div class="card">Combo 1</div>
+        <div class="card">Combo 2</div>
+        <div class="card">Combo 3</div>
+        <div class="card">Combo 4</div>
+        <div class="card">Combo 5</div>
+      </div>
+    </section>
 
-        <div class="carrinho">
-            <button onclick="window.location.href='carrinho.html'">Finalizar Pedido</button>
-        </div>
-    </div>
-    <!-- Área Principal -->
-    <div class="main">
-        <!-- Card de Produto -->
-         <section id="baldes">
-        <div class="card">
-            <h3>Balde de Frango Frito</h3>
-            <p>R$ 39,99</p>
-            <button>Adicionar ao Carrinho</button>
-        </div>
-      </section>
-        
-      <section id="combos">
-        <div class="card">
-            <h3>Combo Família</h3>
-            <p>R$ 69,99</p>
-            <button>Adicionar ao Carrinho</button>
-        </div>
-      </section>
+    <!-- Section Bebidas -->
+    <section id="bebidas">
+      <h2>Bebidas</h2>
+      <div class="linha-produtos">
+        <div class="card">Coca-Cola</div>
+        <div class="card">Pepsi</div>
+        <div class="card">Guaraná</div>
+        <div class="card">Suco</div>
+        <div class="card">Água</div>
+      </div>
+    </section>
 
-      <section id="bebidas">
-        <div class="card">
-            <h3>Bebida Coca-Cola</h3>
-            <p>R$ 6,99</p>
-            <button>Adicionar ao Carrinho</button>
-        </div>
-      </section>
+    <!-- Section Molhos -->
+    <section id="molhos">
+      <h2>Molhos</h2>
+      <div class="linha-produtos">
+        <div class="card">Barbecue</div>
+        <div class="card">Maionese Temperada</div>
+        <div class="card">Molho Picante</div>
+        <div class="card">Molho Ranch</div>
+        <div class="card">Molho Mostarda</div>
+      </div>
+    </section>
 
-      <section id="molhos">
-        <div class="card">
-            <h3>Molho Barbecue</h3>
-            <p>R$ 3,99</p>
-            <button>Adicionar ao Carrinho</button>
-        </div>
-      </section>
-    </div>
+  </div>
+
+<script src="script.js"></script>
 </body>
-    <script src="selecao.js"></script>
 </html>

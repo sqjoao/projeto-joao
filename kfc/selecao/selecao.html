@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido - KFC</title>
+    <link rel="stylesheet" href="selecao.css">
+</head>
+<body>
+
+    <!-- Barra Lateral -->
+    <div class="sidebar">
+        <h2>KFC</h2>
+        <div class="nav-links">
+          <a href="#baldes">
+            <button>Baldes</button>
+          </a>
+
+          <a href="#combos">
+            <button>Combos</button>
+          </a>
+
+          <a href="#bebidas">
+            <button>Bebidas</button>
+          </a>
+
+          <a href="#molhos">
+            <button>Molhos</button>
+          </a>
+        </div>
+
+        <div class="carrinho">
+            <button onclick="window.location.href='carrinho.html'">Finalizar Pedido</button>
+        </div>
+    </div>
+    <!-- Área Principal -->
+    <div class="main">
+        <!-- Card de Produto -->
+         <section id="baldes">
+        <div class="card">
+            <h3>Balde de Frango Frito</h3>
+            <p>R$ 39,99</p>
+            <button>Adicionar ao Carrinho</button>
+        </div>
+      </section>
+        
+      <section id="combos">
+        <div class="card">
+            <h3>Combo Família</h3>
+            <p>R$ 69,99</p>
+            <button>Adicionar ao Carrinho</button>
+        </div>
+      </section>
+
+      <section id="bebidas">
+        <div class="card">
+            <h3>Bebida Coca-Cola</h3>
+            <p>R$ 6,99</p>
+            <button>Adicionar ao Carrinho</button>
+        </div>
+      </section>
+
+      <section id="molhos">
+        <div class="card">
+            <h3>Molho Barbecue</h3>
+            <p>R$ 3,99</p>
+            <button>Adicionar ao Carrinho</button>
+        </div>
+      </section>
+    </div>
+</body>
+    <script src="selecao.js"></script>
+</html>

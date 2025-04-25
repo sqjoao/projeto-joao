@@ -1,3 +1,3 @@
 function IrParaOCarrinho() {
-        window.location.href = "../Selecao/selecao.html";
+        window.location.href = "../selecao/selecao.html";
 }

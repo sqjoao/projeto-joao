@@ -1,6 +1,10 @@
 body{ 
-    background-color: rgb(216, 216, 216); 
-}
+    background-color: rgb(216, 216, 216);
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100px;
+    font-style: normal;
+  }
 
 img{ 
     display: block; margin-left: auto; margin-right: auto; width: 500px; border-radius: 50px; 
@@ -23,7 +27,6 @@ button{
     margin: 20px; 
     font-size: 25px; 
     color: white; 
-    font-family: "Outfit", sans-serif; 
     font-optical-sizing: auto; 
     font-weight: weight; 
     font-style: normal; 

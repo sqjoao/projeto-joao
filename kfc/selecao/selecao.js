@@ -30,5 +30,5 @@ window.onload = function() {
 };
 
 function IrParaOPagamento(){
-        window.location.href = "../Selecao/selecao.html";
+        window.location.href = "../pagamento/pagamento.html";
 }

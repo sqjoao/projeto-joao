@@ -6,7 +6,11 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+    background-color: rgb(216, 216, 216);
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100px;
+    font-style: normal;
 }
 
 /* Sidebar fixa */

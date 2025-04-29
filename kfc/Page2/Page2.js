@@ -7,7 +7,7 @@ function adicionarAoCarrinho(botao) {
 }
 
 function IrParaOPagamento() {
-  window.location.href = "../pagamento/pagamento.html";
+  window.location.href = "../Page3/Page3.html";
 }
 
 function limparCarrinho() {

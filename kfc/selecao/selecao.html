@@ -14,161 +14,244 @@
   <!-- Sidebar -->
   <div class="sidebar">
     <img src="/kfc/assets/pngimg.com - kfc_PNG13.png" alt="logo kfc">
-    <button onclick="document.getElementById('baldes').scrollIntoView({behavior: 'smooth'})">Baldes</button>
-    <button onclick="document.getElementById('combos').scrollIntoView({behavior: 'smooth'})">Combos</button>
-    <button onclick="document.getElementById('bebidas').scrollIntoView({behavior: 'smooth'})">Bebidas</button>
-    <button onclick="document.getElementById('molhos').scrollIntoView({behavior: 'smooth'})">Molhos</button>
-    <span class="precototal" id="total">...</span>
-    <button class="finalizar" onclick="IrParaOPagamento()">Finalizar Pedido</button>
+    <button onclick="document.getElementById('bigbox').scrollIntoView({behavior: 'smooth'})">BIG BOX</button>
+  <button onclick="document.getElementById('baldes').scrollIntoView({behavior: 'smooth'})">BALDES</button>
+  <button onclick="document.getElementById('sanduiches').scrollIntoView({behavior: 'smooth'})">SANDUÍCHES</button>
+  <button onclick="document.getElementById('comboskids').scrollIntoView({behavior: 'smooth'})">COMBOS KIDS</button>
+  <button onclick="document.getElementById('acompanhamentos').scrollIntoView({behavior: 'smooth'})">ACOMPANHAMENTOS</button>
+  <button onclick="document.getElementById('sobremesas').scrollIntoView({behavior: 'smooth'})">SOBREMESAS</button>
+  <button onclick="document.getElementById('bebidas').scrollIntoView({behavior: 'smooth'})">BEBIDAS</button>
+  <span class="preçototal" id="total">R$ 0,00</span>
+  <button onclick="limparCarrinho()">Limpar Carrinho</button>
+  <button class="finalizar" onclick="IrParaOPagamento()">Finalizar Pedido</button>
   </div>
 
   <!-- Área principal -->
   <div class="main">
 
-    <!-- Section Baldes -->
+    <section id="bigbox">
+      <h2>BIG BOX</h2>
+      <div class="linha-produtos">
+        <div class="card">
+          <img src="../assets/bigbox-imagem.png" alt="Big Box 1">
+          <h3>BIG BOX</h3>
+          <p>R$ 59,99</p>
+          <button value="59.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+        </div>
+    </section>
+  
+    <!-- Section BALDES -->
     <section id="baldes">
-      <h2>Baldes</h2>
+      <h2>BALDES</h2>
       <div class="linha-produtos">
         <div class="card">
-          <img src="imagens/balde.png" alt="Balde de Frango">
-          <h3>Balde 1</h3>
+          <img src="../assets/baldefrangopequeno.png" alt="Balde de Frango 1">
+          <h3>balde médio</h3>
           <p>R$ 39,99</p>
           <button value="39.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
         </div>
         <div class="card">
-          <img src="imagens/balde.png" alt="Balde de Frango">
-          <h3>Balde 2</h3>
+          <img src="../assets/baldefrangogrande.png" alt="Balde de Frango 2">
+          <h3>balde grande</h3>
           <p>R$ 49,99</p>
-          <button onclick="adicionarAoCarrinho(this)" value="49.99">Adicionar</button>
+          <button value="49.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
         </div>
         <div class="card">
-          <img src="imagens/balde.png" alt="Balde de Frango">
-          <h3>Balde 3</h3>
-          <p>R$ 39,99</p>
-          <button onclick="adicionarAoCarrinho(this)" value="39.99">Adicionar</button>
-        </div>
-        <div class="card">
-          <img src="imagens/balde.png" alt="Balde de Frango">
-          <h3>Balde 4</h3>
-          <p>R$ 34,99</p>
-          <button onclick="adicionarAoCarrinho(this)" value="34.99">Adicionar</button>
-        </div>
-        <div class="card">
-          <img src="imagens/balde.png" alt="Balde de Frango">
-          <h3>Balde 5</h3>
-          <p>R$ 44,99</p>
-          <button  onclick="adicionarAoCarrinho(this)" value="44.99">Adicionar</button>
+          <img src="../assets/baldefrangomega.png" alt="Balde de Frango 2">
+          <h3>balde mega</h3>
+          <p>R$ 49,99</p>
+          <button value="49.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
         </div>
       </div>
     </section>
-
-    <!-- Section Combos -->
-    <section id="combos">
-      <h2>Combos</h2>
+  
+    <!-- Section SANDUÍCHES -->
+    <section id="sanduiches">
+      <h2>SANDUÍCHES</h2>
       <div class="linha-produtos">
         <div class="card">
-          <img src="imagens/balde.png" alt="Combo 1">
-          <h3>Combo 1</h3>
-          <p>R$ 39,99</p>
-          <button value="39.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+          <img src="../assets/crunchsalad.png" alt="Sanduíche 1">
+          <h3>crunch salad</h3>
+          <p>R$ 19,99</p>
+          <button value="19.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
         </div>
         <div class="card">
-          <img src="imagens/balde.png" alt="Combo 2">
-          <h3>Combo 2</h3>
-          <p>R$ 49,99</p>
-          <button onclick="adicionarAoCarrinho(this)" value="49.99">Adicionar</button>
+          <img src="../assets/crunchjr.png" alt="Sanduíche 2">
+          <h3>crunch jr.</h3>
+          <p>R$ 24,99</p>
+          <button value="24.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
         </div>
         <div class="card">
-          <img src="imagens/balde.png" alt="Combo 3">
-          <h3>Combo 3</h3>
-          <p>R$ 39,99</p>
-          <button onclick="adicionarAoCarrinho(this)" value="39.99">Adicionar</button>
+          <img src="../assets/coroneljr.png" alt="Sanduíche 2">
+          <h3>coronel jr.</h3>
+          <p>R$ 24,99</p>
+          <button value="24.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
         </div>
         <div class="card">
-          <img src="imagens/balde.png" alt="Combo 4">
-          <h3>Combo 4</h3>
-          <p>R$ 34,99</p>
-          <button onclick="adicionarAoCarrinho(this)" value="34.99">Adicionar</button>
+          <img src="../assets/doublecrunch.png" alt="Sanduíche 2">
+          <h3>double crunch</h3>
+          <p>R$ 24,99</p>
+          <button value="24.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
         </div>
         <div class="card">
-          <img src="imagens/balde.png" alt="Combo 5">
-          <h3>Combo 5</h3>
-          <p>R$ 44,99</p>
-          <button  onclick="adicionarAoCarrinho(this)" value="44.99">Adicionar</button>
+          <img src="../assets/doubelcrunchbbq.png" alt="Sanduíche 2">
+          <h3>double crunch bbq</h3>
+          <p>R$ 24,99</p>
+          <button value="24.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+        </div>
+        <div class="card">
+          <img src="../assets/doubelcrunchcheddar.png" alt="Sanduíche 2">
+          <h3>double crunch cheddar</h3>
+          <p>R$ 24,99</p>
+          <button value="24.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+        </div>
+        <div class="card">
+          <img src="../assets/doublecrunchbacon.png" alt="Sanduíche 2">
+          <h3>double crunch bacon</h3>
+          <p>R$ 24,99</p>
+          <button value="24.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+        </div>
+        <div class="card">
+          <img src="../assets/kentuckychickensandwich.png" alt="Sanduíche 2">
+          <h3>kentucky chicken sandwich</h3>
+          <p>R$ 24,99</p>
+          <button value="24.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+        </div>
+        <div class="card">
+          <img src="../assets/kentuckychickendeluxe.png" alt="Sanduíche 2">
+          <h3>kentucky chicken deluxe</h3>
+          <p>R$ 24,99</p>
+          <button value="24.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+        </div>
+        <div class="card">
+          <img src="../assets/kentuckychickenbbo.png" alt="Sanduíche 2">
+          <h3>kentucky chicken bbo</h3>
+          <p>R$ 24,99</p>
+          <button value="24.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
         </div>
       </div>
     </section>
-
-    <!-- Section Bebidas -->
+  
+    <!-- Section COMBOS KIDS -->
+    <section id="comboskids">
+      <h2>COMBO KIDS</h2>
+      <div class="linha-produtos">
+        <div class="card">
+          <img src="../assets/combokids.png" alt="Combo Kids 1">
+          <h3>Combo Kids 1</h3>
+          <p>R$ 29,99</p>
+          <button value="29.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Section ACOMPANHAMENTOS -->
+    <section id="acompanhamentos">
+      <h2>ACOMPANHAMENTOS</h2>
+      <div class="linha-produtos">
+        <div class="card">
+          <img src="../assets/wrapcrunch.png" alt="Acompanhamento 1">
+          <h3>wrap crunch</h3>
+          <p>R$ 9,99</p>
+          <button value="9.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+        </div>
+        <div class="card">
+          <img src="../assets/wrapcoronel.png" alt="Acompanhamento 2">
+          <h3>wrap coronel</h3>
+          <p>R$ 12,99</p>
+          <button value="12.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+        </div>
+        <div class="card">
+          <img src="../assets/salada.png" alt="Acompanhamento 2">
+          <h3>salada</h3>
+          <p>R$ 12,99</p>
+          <button value="12.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+        </div>
+        <div class="card">
+          <img src="../assets/batatamédia.png" alt="Acompanhamento 2">
+          <h3>balde de batata média</h3>
+          <p>R$ 12,99</p>
+          <button value="12.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+        </div>
+        <div class="card">
+          <img src="../assets/wowboxchicken.png" alt="Acompanhamento 2">
+          <h3>wow box chicken</h3>
+          <p>R$ 12,99</p>
+          <button value="12.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+        </div>
+        <div class="card">
+          <img src="../assets/snackbox.png" alt="Acompanhamento 2">
+          <h3>snack box</h3>
+          <p>R$ 12,99</p>
+          <button value="12.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Section SOBREMESAS -->
+    <section id="sobremesas">
+      <h2>SOBREMESAS</h2>
+      <div class="linha-produtos">
+        <div class="card">
+          <img src="../assets/milkshake.png" alt="Sobremesa 1">
+          <h3>milkshake</h3>
+          <p>R$ 14,99</p>
+          <button value="14.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+        </div>
+        <div class="card">
+          <img src="../assets/kfccream.png" alt="Sobremesa 2">
+          <h3>kfc cream</h3>
+          <p>R$ 19,99</p>
+          <button value="19.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+        </div>
+        <div class="card">
+          <img src="../assets/sundae.png" alt="Sobremesa 2">
+          <h3>sundae</h3>
+          <p>R$ 19,99</p>
+          <button value="19.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+        </div>
+        <div class="card">
+          <img src="../assets/brigadeiro.png" alt="Sobremesa 2">
+          <h3>brigadeiro</h3>
+          <p>R$ 19,99</p>
+          <button value="19.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+        </div>
+        <div class="card">
+          <img src="../assets/casquinha.png" alt="Sobremesa 2">
+          <h3>casquinha</h3>
+          <p>R$ 19,99</p>
+          <button value="19.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Section BEBIDAS -->
     <section id="bebidas">
-      <h2>Bebidas</h2>
+      <h2>BEBIDAS</h2>
       <div class="linha-produtos">
         <div class="card">
-          <img src="imagens/balde.png" alt="Bebidas">
-          <h3>Bebida 1</h3>
-          <p>R$ 39,99</p>
-          <button value="39.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+          <img src="../assets/agua.png" alt="Bebida 1">
+          <h3>Água</h3>
+          <p>R$ 6,99</p>
+          <button value="6.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
         </div>
         <div class="card">
-          <img src="imagens/balde.png" alt="Bebidas">
-          <h3>Bebida 2</h3>
-          <p>R$ 49,99</p>
-          <button onclick="adicionarAoCarrinho(this)" value="49.99">Adicionar</button>
+          <img src="../assets/coca.png" alt="Bebida 2">
+          <h3>Coca</h3>
+          <p>R$ 8,99</p>
+          <button value="8.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
         </div>
         <div class="card">
-          <img src="imagens/balde.png" alt="Bebidas">
-          <h3>Bebida 3</h3>
-          <p>R$ 39,99</p>
-          <button onclick="adicionarAoCarrinho(this)" value="39.99">Adicionar</button>
+          <img src="../assets/guarana.png" alt="Bebida 2">
+          <h3>Guaraná</h3>
+          <p>R$ 8,99</p>
+          <button value="8.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
         </div>
         <div class="card">
-          <img src="imagens/balde.png" alt="Bebidas">
-          <h3>Bebida 4</h3>
-          <p>R$ 34,99</p>
-          <button onclick="adicionarAoCarrinho(this)" value="34.99">Adicionar</button>
-        </div>
-        <div class="card">
-          <img src="imagens/balde.png" alt="Bebidas">
-          <h3>Bebida 5</h3>
-          <p>R$ 44,99</p>
-          <button  onclick="adicionarAoCarrinho(this)" value="44.99">Adicionar</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section Molhos -->
-    <section id="molhos">
-      <h2>Molhos</h2>
-      <div class="linha-produtos">
-        <div class="card">
-          <img src="imagens/balde.png" alt="Molho 1">
-          <h3>Molho 1</h3>
-          <p>R$ 39,99</p>
-          <button value="39.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
-        </div>
-        <div class="card">
-          <img src="imagens/balde.png" alt="Molho 2">
-          <h3>Molho 2</h3>
-          <p>R$ 49,99</p>
-          <button onclick="adicionarAoCarrinho(this)" value="49.99">Adicionar</button>
-        </div>
-        <div class="card">
-          <img src="imagens/balde.png" alt="Molho 3">
-          <h3>Molho 3</h3>
-          <p>R$ 39,99</p>
-          <button onclick="adicionarAoCarrinho(this)" value="39.99">Adicionar</button>
-        </div>
-        <div class="card">
-          <img src="imagens/balde.png" alt="Molho 4">
-          <h3>Molho 4</h3>
-          <p>R$ 34,99</p>
-          <button onclick="adicionarAoCarrinho(this)" value="34.99">Adicionar</button>
-        </div>
-        <div class="card">
-          <img src="imagens/balde.png" alt="Molho 5">
-          <h3>Molho 5</h3>
-          <p>R$ 44,99</p>
-          <button  onclick="adicionarAoCarrinho(this)" value="44.99">Adicionar</button>
+          <img src="../assets/suco.png" alt="Bebida 2">
+          <h3>Suco</h3>
+          <p>R$ 8,99</p>
+          <button value="8.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
         </div>
       </div>
     </section>

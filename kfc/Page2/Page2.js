@@ -1,9 +1,17 @@
-let total = 0;
+let total = parseFloat(localStorage.getItem("total")) || 0;
+let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
 function adicionarAoCarrinho(botao) {
   var preco = parseFloat(botao.value);
   total += preco;
+  carrinho.push(botao.parentNode.querySelector("h3").textContent); // pega o nome do produto
+
+  // Atualiza na tela
   document.getElementById("total").innerHTML = "R$ " + total.toFixed(2);
+
+  // Salva no localStorage
+  localStorage.setItem("total", total);
+  localStorage.setItem("carrinho", JSON.stringify(carrinho));
 }
 
 function IrParaOPagamento() {
@@ -12,8 +20,23 @@ function IrParaOPagamento() {
 
 function limparCarrinho() {
   total = 0;
-  quantidade = 0;
+  carrinho = [];
+
+  // Atualiza na tela
   document.getElementById("total").innerHTML = "R$ 0.00";
-  document.getElementById("quantidade").innerHTML = "0 itens";
-  document.getElementById("resumo-carrinho").innerHTML = "";
+  if (document.getElementById("quantidade")) {
+    document.getElementById("quantidade").innerHTML = "0 itens";
+  }
+  if (document.getElementById("resumo-carrinho")) {
+    document.getElementById("resumo-carrinho").innerHTML = "";
+  }
+
+  // Limpa localStorage
+  localStorage.removeItem("total");
+  localStorage.removeItem("carrinho");
+}
+
+// Atualiza o total na tela ao carregar a página
+window.onload = function() {
+  document.getElementById("total").innerHTML = "R$ " + total.toFixed(2);
 }

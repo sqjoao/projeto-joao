@@ -1,16 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagamento</title>
-    <link rel="stylesheet" href="Page3.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagamento - KFC</title>
+  <link rel="stylesheet" href="Page3.css">
+  <script src="pagamento.js" defer></script>
 </head>
 <body>
-    
+
+  <div class="topbar">
+    <h1>KFC - Resumo do Pedido</h1>
+    <button class="voltar" onclick="voltarParaPedidos()">Voltar para pedidos</button>
+  </div>
+
+  <div class="lista-pedidos" id="listaPedidos">
+    <!-- Lista de itens inserida via JS -->
+  </div>
+
+  <div class="resumo">
+    <h2>Total: R$ <span id="totalFinal">0,00</span></h2>
+    <button id="botaoPagamento" onclick="mostrarOpcoesPagamento()">Escolher forma de pagamento</button>
+
+    <div id="opcoesPagamento" class="escondido">
+      <button onclick="selecionarPagamento('PIX')">PIX</button>
+      <button onclick="selecionarPagamento('Cartão')">Cartão</button>
+      <button onclick="selecionarPagamento('Dinheiro')">Dinheiro</button>
+    </div>
+
+    <button id="botaoConfirmar" onclick="confirmarPedido()" disabled>Confirmar</button>
+
+    <div id="opcoesConsumo" class="escondido">
+      <button onclick="finalizarConsumo('Comer aqui')">Comer aqui</button>
+      <button onclick="finalizarConsumo('Levar para casa')">Levar para casa</button>
+    </div>
+  </div>
 </body>
     <script src="Page3.js"></script>
 </html>

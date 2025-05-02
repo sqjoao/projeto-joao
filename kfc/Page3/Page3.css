@@ -1,7 +1,59 @@
-body{
-    background-color: rgb(216, 216, 216);
-    font-family: "Outfit", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 100px;
-    font-style: normal;
-}
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #fff;
+    color: #333;
+  }
+  
+  .topbar {
+    background: #d32f2f;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  h3{
+    text-transform: uppercase;
+  }
+  
+  .voltar {
+    background: #fff;
+    color: #d32f2f;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .lista-pedidos {
+    padding: 20px;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .resumo {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .resumo button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #d32f2f;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  #opcoesPagamento button,
+  #opcoesConsumo button {
+    margin: 5px;
+  }
+  
+  .escondido {
+    display: none;
+  }
+  

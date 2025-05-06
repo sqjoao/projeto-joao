@@ -10,13 +10,18 @@
 <body>
 
   <div class="topbar">
+    <img src="../assets/logokfc.png" alt="logokfc">
     <h1>KFC - Resumo do Pedido</h1>
     <button class="voltar" onclick="voltarParaPedidos()">Voltar para pedidos</button>
   </div>
+   
+  <hr>
 
   <div class="lista-pedidos" id="listaPedidos">
     <!-- Lista de itens inserida via JS -->
   </div>
+
+  <hr>
 
   <div class="resumo">
     <h2>Total: R$ <span id="totalFinal">0,00</span></h2>
@@ -35,6 +40,10 @@
       <button onclick="finalizarConsumo('Levar para casa')">Levar para casa</button>
     </div>
   </div>
+
+  <div id="qrcode"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
 </body>
     <script src="Page3.js"></script>
 </html>

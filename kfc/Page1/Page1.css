@@ -7,11 +7,16 @@ body{
   }
 
 img{ 
-    display: block; margin-left: auto; margin-right: auto; width: 500px; border-radius: 50px; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 500px; 
+    border-radius: 50px; 
 } 
 
 img:hover{ 
-    box-shadow: 2px 4px 10px 0 rgba(0,0,0,.2); transform: translateY(-2px); 
+    box-shadow: 2px 4px 10px 0 rgba(0,0,0,.2); 
+    transform: translateY(-2px); 
 } 
 
 .inicio{ 
@@ -37,9 +42,3 @@ button:hover{
     cursor: pointer;
     transform: translateY(-3px);
 } 
-
-@media only screen and (max-width: 600px) {
-    img{
-     justify-content:center; align-items:center; margin-left: 70px;
-    } 
-}

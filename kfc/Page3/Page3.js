@@ -35,18 +35,6 @@ function finalizarConsumo(opcao) {
   let pagamento = localStorage.getItem("pagamentoEscolhido") || "Não selecionado";
   let mensagem = `Pedido confirmado!\nConsumo: ${opcao}\nPagamento: ${pagamento}`;
   alert(mensagem);
-
-  // Gerar QR Code com a mensagem
-  let qrDiv = document.getElementById("qrcode");
-  qrDiv.innerHTML = ""; // Limpa se já tiver algum
-  new QRCode(qrDiv, {
-    text: mensagem,
-    width: 200,
-    height: 200
-  });
-
-  // Aqui poderia limpar o carrinho se quiser
 }
 
-// Executar ao carregar página
 exibirPedidos();

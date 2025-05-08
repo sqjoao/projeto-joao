@@ -12,7 +12,7 @@
 <body>
 
   <!-- Sidebar -->
-  <div class="sidebar">
+  <nav class="sidebar">
     <img src="../assets/logokfc.png" alt="logo kfc">
     <button onclick="document.getElementById('bigbox').scrollIntoView({behavior: 'smooth'})">BIG BOX</button>
     <button onclick="document.getElementById('baldes').scrollIntoView({behavior: 'smooth'})">BALDES</button>
@@ -21,16 +21,16 @@
     <button onclick="document.getElementById('acompanhamentos').scrollIntoView({behavior: 'smooth'})">ACOMPANHAMENTOS</button>
     <button onclick="document.getElementById('sobremesas').scrollIntoView({behavior: 'smooth'})">SOBREMESAS</button>
     <button onclick="document.getElementById('bebidas').scrollIntoView({behavior: 'smooth'})">BEBIDAS</button>
-
+  
     <span class="preçototal" id="total">R$ 0,00</span>
 
     <button onclick="limparCarrinho()">Limpar Carrinho</button>
     
     <button class="finalizar" onclick="IrParaOPagamento()">Finalizar Pedido</button>
-  </div>
+  </nav>
 
   <!-- Área principal -->
-  <div class="main">
+   <article class="main">
 
     <section id="bigbox">
       <h2>BIG BOX</h2>
@@ -156,7 +156,7 @@
           <img src="../assets/wrapcrunch.png" alt="Acompanhamento 1">
           <h3>wrap crunch</h3>
           <p>R$ 14,90</p>
-          <button value="14.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+          <button value="14.90" onclick="adicionarAoCarrinho(this)">Adicionar</button>
         </div>
         <div class="card">
           <img src="../assets/wrapcoronel.png" alt="Acompanhamento 2">
@@ -257,9 +257,12 @@
           <button value="6.99" onclick="adicionarAoCarrinho(this)">Adicionar</button>
         </div>
       </div>
-    </section>
+  </article>
+</div>
 
-  </div>
+<footer>
+  <p style="text-align:center;">© 2025 KFC Autoatendimento - Projeto Acadêmico</p>
+</footer>
 
 <script src="Page2.js"></script>
 </body>

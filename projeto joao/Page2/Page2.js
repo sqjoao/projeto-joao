@@ -5,6 +5,8 @@ function adicionarAoCarrinho(botao) {
   var preco = parseFloat(botao.value);
   total += preco;
   carrinho.push(botao.parentNode.querySelector("h3").textContent); // pega o nome do produto
+  // Quando o botão "Adicionar" é clicado, botao.parentNode pega a <div class="card"> inteira.
+  //Dentro desse elemento pai (o .card), ele procura o primeiro elemento <h3> que encontrar.
 
   // Atualiza na tela
   document.getElementById("total").innerHTML = "R$ " + total.toFixed(2);

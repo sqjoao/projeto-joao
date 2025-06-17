@@ -9,11 +9,11 @@ function carregarUsuarios() {
           const li = document.createElement('li');
           li.textContent = `Nome: ${usuario.nome} | Senha: ${usuario.senha}`;
   
-          const btnExcluir = document.createElement('button');
-          btnExcluir.textContent = 'Excluir';
-          btnExcluir.onclick = () => excluirUsuario(usuario.nome);
+          const Excluir = document.createElement('button');
+          Excluir.textContent = 'Excluir';
+          Excluir.onclick = () => excluirUsuario(usuario.nome);
   
-          li.appendChild(btnExcluir);
+          li.appendChild(Excluir);
           lista.appendChild(li);
         });
       });

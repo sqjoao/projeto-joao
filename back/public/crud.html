@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <title>Usuários</title>
+</head>
+<body>
+    <h1>Lista de Usuários</h1>
+    <ul id="listaUsuarios"></ul>
+    <a href="index.html">Voltar</a>
+
+    <script>
+        function carregarUsuarios() {
+            fetch('http://localhost:3000/usuarios')
+                .then(res => res.json())
+                .then(usuarios => {
+                    const lista = document.getElementById('listaUsuarios');
+                    lista.innerHTML = '';
+                    usuarios.forEach(u => {
+                        const li = document.createElement('li');
+                        li.innerHTML = `
+                            <strong>ID:</strong> ${u.id} |
+                            <strong>Nome:</strong> ${u.nome} |
+                            <strong>Senha:</strong> ${u.senha}
+                            <button onclick="deletarUsuario(${u.id})">Excluir</button>
+                            <button onclick="alterarSenha(${u.id})">Alterar senha</button>
+                        `;
+                        lista.appendChild(li);
+                    });
+                })
+                .catch(() => alert('Erro ao carregar usuários'));
+        }
+
+        function deletarUsuario(id) {
+            if (!confirm(`Excluir usuário ID ${id}?`)) return;
+            fetch(`http://localhost:3000/usuarios/${id}`, { method: 'DELETE' })
+                .then(res => res.text())
+                .then(alert)
+                .then(carregarUsuarios)
+                .catch(() => alert('Erro ao excluir usuário'));
+        }
+
+        function alterarSenha(id) {
+            const novaSenha = prompt(`Nova senha para o ID ${id}:`);
+            if (!novaSenha) return;
+            fetch(`http://localhost:3000/usuarios/${id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ novaSenha }),
+            })
+                .then(res => res.text())
+                .then(alert)
+                .then(carregarUsuarios)
+                .catch(() => alert('Erro ao alterar senha'));
+        }
+
+        carregarUsuarios();
+    </script>
+</body>
+</html>

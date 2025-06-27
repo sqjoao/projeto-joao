@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <title>Registro</title>
+</head>
+<body>
+    <h1>Registro</h1>
+    <input type="text" id="nome" placeholder="Nome" />
+    <input type="password" id="senha" placeholder="Senha" />
+    <button onclick="registrar()">Cadastrar</button>
+
+    <script>
+        function registrar() {
+            const nome = document.getElementById('nome').value;
+            const senha = document.getElementById('senha').value;
+
+            fetch('http://localhost:3000/registrar', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ nome, senha }),
+            })
+                .then(res => {
+                    if (res.ok) {
+                        alert('Cadastrado com sucesso!');
+                        window.location.href = 'crud.hmtl';
+                    } else {
+                        return res.text();
+                    }
+                })
+                .then(msg => {
+                    if (msg) alert(msg);
+                })
+                .catch(() => alert('Erro ao tentar registrar.'));
+        }
+    </script>
+</body>
+</html>

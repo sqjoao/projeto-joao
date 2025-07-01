@@ -39,4 +39,19 @@ function finalizarConsumo(opcao) {
   alert(mensagem);
 }
 
+window.onload = () => {
+  const usuario = JSON.parse(localStorage.getItem('usuarioLogado'));
+
+  if (!usuario) {
+    // Se não houver usuário logado, limpar qualquer carrinho e login antigo
+    localStorage.removeItem('usuarioLogado');
+    localStorage.removeItem('carrinho');
+    localStorage.removeItem('total');
+    alert('Você precisa estar logado para finalizar a compra.');
+    window.location.href = 'login.html';
+    return;
+  
+};
+}
+
 exibirPedidos();

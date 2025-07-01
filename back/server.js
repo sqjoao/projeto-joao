@@ -16,11 +16,28 @@ function lerUsuarios() {
     if (!fs.existsSync(csvPath)) return [];
     const data = fs.readFileSync(csvPath, 'utf8').trim();
     if (!data) return [];
-    return data.split('\n').map(linha => {
-        const [id, nome, senha] = linha.split(',');
-        return { id: parseInt(id), nome, senha };
-    });
+    const linhas = data.split('\n');
+
+    let inicio = 0;
+    const primeiraLinha = linhas[0].toLowerCase();
+    if (primeiraLinha.startsWith('id') && primeiraLinha.includes('nome') && primeiraLinha.includes('senha')) {
+        inicio = 1;
+    }
+
+    return linhas.slice(inicio)
+        .map(linha => {
+            const partes = linha.split(',');
+            if (partes.length !== 3) return null; // ignora linhas quebradas
+
+            const [id, nome, senha] = partes;
+            const idNum = parseInt(id);
+            if (isNaN(idNum) || !nome || !senha) return null; // ignora inválidos
+
+            return { id: idNum, nome, senha };
+        })
+        .filter(u => u !== null); // remove os nulos
 }
+
 
 function salvarUsuarios(usuarios) {
     const linhas = usuarios.map(u => `${u.id},${u.nome},${u.senha}`).join('\n');
@@ -49,11 +66,10 @@ app.post('/login', (req, res) => {
     const usuarios = lerUsuarios();
     const usuario = usuarios.find(u => u.nome === nome && u.senha === senha);
 
-    if (usuario) {
-        res.send('OK');
-    } else {
-        res.status(401).send('NAOEXISTE');
-    }
+    if (!usuario) return res.status(404).json({ erro: 'NAOEXISTE' });
+
+    // devolve dados do usuário logado
+    res.status(200).json({ id: usuario.id, nome: usuario.nome });
 });
 
 // Listar usuários

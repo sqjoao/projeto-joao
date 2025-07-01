@@ -5,7 +5,44 @@
     <title>Página Principal</title>
 </head>
 <body>
-    <h1>Bem-vindo!</h1>
-    <a href="crud.html">Ver lista de usuários</a>
+    <h1 id="boasVindas"></h1>
+
+<div id="adminArea" style="display:none;">
+  <h2>Área Administrativa</h2>
+  <a href="crud.html">Gerenciar Usuários</a>
+</div>
+
+<div>
+  <a href="produtos.html">Ver Produtos</a>
+</div>
+
+<button onclick="logout()">Sair</button>
+
+<script>
+    function logout() {
+        localStorage.removeItem('usuarioLogado');
+        window.location.href = 'login.html';
+    }
+    window.onload = function() {
+  const usuario = JSON.parse(localStorage.getItem('usuarioLogado'));
+
+  if (!usuario) {
+    alert('Faça login primeiro!');
+    window.location.href = 'login.html';
+    return;
+  }
+
+  document.getElementById('boasVindas').innerText = `Olá, ${usuario.nome}!`;
+
+  if (usuario.id === 0) {
+    // Área admin: mostra menus, opções exclusivas etc
+    document.getElementById('adminArea').style.display = 'block';
+  } else {
+    // Área usuário normal: esconde opções admin
+    document.getElementById('adminArea').style.display = 'none';
+  }
+};
+
+</script>
 </body>
 </html>

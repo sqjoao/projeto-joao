@@ -13,30 +13,33 @@
     <p><a href="registro.html">Cadastrar-se</a></p>
 
     <script>
-        function login() {
+        function login(){
             const nome = document.getElementById('nome').value;
             const senha = document.getElementById('senha').value;
 
-            fetch('http://localhost:3000/login', {
+                fetch('http://localhost:3000/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ nome, senha }),
-            })
+                })
+                
                 .then(res => {
-                    if (res.ok) {
-                        window.location.href = 'index.html';
-                    } else {
-                        return res.text();
-                    }
-                })
-                .then(msg => {
-                    if (msg === 'NAOEXISTE') {
-                        alert('Usuário não encontrado.');
+                    if (res.status === 404) {
+                        alert('Usuário não encontrado. Você será redirecionado para o cadastro.');
                         window.location.href = 'registro.html';
+                        throw new Error('STOP_FLOW');
                     }
+                        return res.json();
                 })
-                .catch(() => alert('Erro ao tentar fazer login.'));
-        }
+                .then(usuario => {
+                // salva dados no localStorage
+                localStorage.setItem('usuarioLogado', JSON.stringify(usuario));
+                window.location.href = '../../front/Page1/Page1.html';
+                })
+                .catch(err => {
+                    if (err.message !== 'STOP_FLOW') alert('Erro: ' + err.message);
+                });
+            }
     </script>
 </body>
 </html>

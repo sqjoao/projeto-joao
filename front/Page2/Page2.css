@@ -173,6 +173,17 @@ span{
   font-size: 20px;
 }
 
+.userIcon{
+  width: 2.5%;
+  float: right;
+  background-color: #d9230f;
+  border-radius: 50%;
+}
+
+.userIcon:hover{
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 768px) {
   span{
     text-align: center;

@@ -42,3 +42,7 @@ function limparCarrinho() {
 window.onload = function() {
   document.getElementById("total").innerHTML = "R$ " + total.toFixed(2);
 }
+
+function IrParaLogin(){
+  window.location.href = "../../back/public/login.html"
+}
